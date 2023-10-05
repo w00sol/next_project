@@ -11,6 +11,7 @@ export default function Home() {
             <div className='link'>
                 <a href = {link} target='_blank' title='새창' style={{color:'#fff', fontSize:'12px'}} >google_link</a>
             </div>
+            <div>메인페이지만들기</div>
         </div>
     )
 }
