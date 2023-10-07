@@ -9,10 +9,15 @@ body{margin: 0;padding: 0; background-color: #303030;color: #fff;}
 .navbar a{margin-right: 10px;text-decoration: none;color: #000;}
 
 /* cart/layout */
-.payment {text-align: end;color#fff: 30px;}
+.payment {text-align: end;color:#fff; margin-right:30px;}
 .payment a{color: #fff;text-decoration: none;}
 .event{text-align: center;}
 
 /* list */
 
 .food{margin: 20px auto;width: 200px;background-color: #fff;color: #000;padding: 20px;border-radius: 5px;}
+.food_img{width: 100%; height: auto;}
+
+/* cart */
+
+.cart_item{padding:10px; display:flex; justify-content:space-around; border-bottom: 1px solid #ccc;line-height: 0px;}
