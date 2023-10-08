@@ -12,6 +12,11 @@ export default function cart(){
         <p>$40</p>
         <p>1개</p>
       </div>
+      <div className="cart_item">
+        <p>상품명</p>
+        <p>$40</p>
+        <p>1개</p>
+      </div>
     </div>
   )
 }
