@@ -5,9 +5,13 @@ import {age, name} from './data.js'
 import Hello from './hello.js'
 
 export default function cart(){
+  let cart = ['Tomatoes', 'Pasta', 'Coconut' ]
   return(
     <div>
       <Hello></Hello>
+      <Banner content ='롯데카드'></Banner>
+      <Banner content ='삼성카드'></Banner>
+      <Banner content ='현대카드'></Banner>
       <h1 className="title">cart</h1>      
       <div className="cart_item">
         <p>상품명{age}{name}</p>
@@ -19,20 +23,38 @@ export default function cart(){
         <p>$40</p>
         <p>1개</p>
       </div>
-      <CartItem></CartItem>
-      <CartItem></CartItem>
+      <CartItem 상품명={cart[0]}/>
+      <CartItem 상품명={cart[1]}></CartItem>
+      <CartItem 상품명={cart[2]}></CartItem>
+      <Btn color='red'></Btn>      
+      <Btn color='blue'></Btn>
     </div>
   )
 }
+
+function Btn (props){
+  return(
+    <div style={{textAlign:'center'}}>
+      <button style={{backgroundColor: props.color}}>버튼</button>
+    </div>
+  )
+}
+
+function Banner(props){
+  return(
+    <h5 style={{textAlign: 'center'}}>{props.content} 결제 행사중</h5>
+  )
+}
+
 
 // component만들기
 // 1.component만들땐 function 밖에 function만들기 변수명은 대문자로 시작!!
 // 2. return()안에 축약하고싶은 html작성
 // 3. 작명한 변수명 상단 return언 html에 사용 ex) <CartItem></CartItem> 
-function CartItem(){
+function CartItem(props){
   return(
     <div className="cart_item">
-        <p>상품명 </p>
+        <p>{props.상품명} </p>
         <p>$40</p>
         <p>1개</p>
       </div>
@@ -57,3 +79,8 @@ function CartItem(){
 // (./현재경로 ../상위폴더)
 
 // data.js에 export 할떄 변수 여러개 사용하려면 export{변수명1, 변수명2} 이런식으로 {}안에 넣어야하고, import할때도 변수명 {}안에 다 적어 줘야함 
+
+// ***
+// props문법 부모 -> 자식데이터 전송 할때 사용
+// 1. <자식 component 작명 ='전할 데이터'/>
+// 2.자식은 Props.작명사용
