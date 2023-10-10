@@ -6,6 +6,7 @@ import Hello from './hello.js'
 
 export default function cart(){
   let cart = ['Tomatoes', 'Pasta', 'Coconut' ]
+  let price = ['$30', '$40', '$50' ]  
   return(
     <div>
       <Hello></Hello>
@@ -23,9 +24,9 @@ export default function cart(){
         <p>$40</p>
         <p>1개</p>
       </div>
-      <CartItem 상품명={cart[0]}/>
-      <CartItem 상품명={cart[1]}></CartItem>
-      <CartItem 상품명={cart[2]}></CartItem>
+      <CartItem 상품명={cart[0]} 가격={price[0]}/>
+      <CartItem 상품명={cart[1]} 가격={price[1]}></CartItem>
+      <CartItem 상품명={cart[2]}가격={price[2]}></CartItem>
       <Btn color='red'></Btn>      
       <Btn color='blue'></Btn>
     </div>
@@ -55,7 +56,7 @@ function CartItem(props){
   return(
     <div className="cart_item">
         <p>{props.상품명} </p>
-        <p>$40</p>
+        <p>{props.가격}</p>
         <p>1개</p>
       </div>
   )

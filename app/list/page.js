@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from "react"
+
 // import Image from "next/image"
 // import image0 from "/public/food0.png"
 // import image1 from "/public/food1.png"
@@ -5,9 +9,20 @@
 export default function list() {
 	let 상품 =['tomatoes', 'pasta', 'coconut']		
   let 가격 =[20, 30, 40]
+  let [수량, 수량변경] = useState([0, 0, 0])
 	return (
 		<div>
 			<h1 className="title">상품목록</h1>
+      <span>{수량[0]}</span>
+      <button onClick={function(){
+        let copy = [...수량]
+        copy[0]++ 
+        수량변경(copy) 
+        }}>+</button>
+      <span>{수량[1]}</span>
+      <button>+</button>
+      <span>{수량[2]}</span>
+      <button>+</button>
 			{
 				상품.map(function(a,i){
 					return(
@@ -20,6 +35,19 @@ export default function list() {
               {/* <Image src={image0} className="food_img"></Image> */}
 							{/* <h4>{상품[i]} ${가격[i]}</h4> */}
 							<h4>{a} ${가격[i]}</h4>
+              {/* <div style={{textAlign:'center'}}> */}
+                <button onClick={function(){
+                  let minus = [...수량]
+                  minus[i]--
+                  수량변경 (minus)
+                }}>-</button>
+                <span style={{margin:'0 5px'}}>{수량[i]}</span>
+                <button onClick={function(){
+                  let plus = [...수량]
+                  plus[i]++
+                  수량변경 (plus)
+                }}>+</button>
+              {/* </div> */}
 						</div>
 					)
 				})
